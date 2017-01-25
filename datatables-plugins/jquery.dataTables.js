@@ -4160,7 +4160,8 @@
 		var language = settings.oLanguage;
 		var previousSearch = settings.oPreviousSearch;
 		var features = settings.aanFeatures;
-		var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
+		var input = '<div class="input-group"><span class="input-group-addon">'+language.sSearch+'</span>'+
+					'<input type="search" class="'+classes.sFilterInput+'"/></div>';
 	
 		var str = language.sSearch;
 		str = str.match(/_INPUT_/) ?
@@ -4171,7 +4172,7 @@
 				'id': ! features.f ? tableId+'_filter' : null,
 				'class': classes.sFilter
 			} )
-			.append( $('<label/>' ).append( str ) );
+			.append( $('<label/>' ).append( input ) );
 	
 		var searchFn = function() {
 			/* Update all other filter input elements for the new display */
@@ -11637,7 +11638,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "搜索：",
+			"sSearch": "搜索",
 	
 	
 			/**
